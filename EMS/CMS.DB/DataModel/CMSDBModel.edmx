@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="eCommAdapter_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClientRequestAlias">
+          <Key>
+            <PropertyRef Name="ClientRequestAliasId" />
+          </Key>
+          <Property Name="ClientRequestAliasId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RequestDetailID" Type="int" Nullable="false" />
+          <Property Name="MessageId" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="AuditId" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="ClientRequestXml" Type="xml" Nullable="false" />
+          <Property Name="ClientResponseXml" Type="xml" />
+          <Property Name="ClientStatus" Type="bit" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="ClientNumber" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryISOCode" />
+          </Key>
+          <Property Name="CountryISOCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="IsMultiPolicySupport" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="eCommAdapter_DevModelStoreContainer">
+          <EntitySet Name="ClientRequestAlias" EntityType="Self.ClientRequestAlias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="eCommAdapter_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="CountryISOCode" />
+          </Key>
+          <Property Name="CountryISOCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="IsMultiPolicySupport" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="eCommAdapter_DevEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="ClientRequestAlias" EntityType="eCommAdapter_DevModel.ClientRequestAlia" />
+        </EntityContainer>
+        <EntityType Name="ClientRequestAlia">
+          <Key>
+            <PropertyRef Name="ClientRequestAliasId" />
+          </Key>
+          <Property Name="ClientRequestAliasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RequestDetailID" Type="Int32" Nullable="false" />
+          <Property Name="MessageId" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="AuditId" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="ClientRequestXml" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClientResponseXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClientStatus" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="eCommAdapter_DevModelStoreContainer" CdmEntityContainer="eCommAdapter_DevEntities">
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="eCommAdapter_DevModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="CountryISOCode" ColumnName="CountryISOCode" />
+                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="IsMultiPolicySupport" ColumnName="IsMultiPolicySupport" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientRequestAlias">
+            <EntityTypeMapping TypeName="eCommAdapter_DevModel.ClientRequestAlia">
+              <MappingFragment StoreEntitySet="ClientRequestAlias">
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ClientStatus" ColumnName="ClientStatus" />
+                <ScalarProperty Name="ClientResponseXml" ColumnName="ClientResponseXml" />
+                <ScalarProperty Name="ClientRequestXml" ColumnName="ClientRequestXml" />
+                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="RequestDetailID" ColumnName="RequestDetailID" />
+                <ScalarProperty Name="ClientRequestAliasId" ColumnName="ClientRequestAliasId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="eCommAdapter_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ClientRequestAlias">
+    <Key>
+      <PropertyRef Name="ClientRequestAliasId" />
+    </Key>
+    <Property Name="ClientRequestAliasId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestDetailID" Type="int" Nullable="false" />
+    <Property Name="MessageId" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="AuditId" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="ClientRequestXml" Type="xml" Nullable="false" />
+    <Property Name="ClientResponseXml" Type="xml" />
+    <Property Name="ClientStatus" Type="bit" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="ClientNumber" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryISOCode" />
+    </Key>
+    <Property Name="CountryISOCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="IsMultiPolicySupport" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="eCommAdapter_DevModelStoreContainer">
+    <EntitySet Name="ClientRequestAlias" EntityType="Self.ClientRequestAlias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

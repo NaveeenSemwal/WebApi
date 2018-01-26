@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="eCommAdapter_DevModelStoreContainer" CdmEntityContainer="eCommAdapter_DevEntities">
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="eCommAdapter_DevModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryISOCode" ColumnName="CountryISOCode" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="IsMultiPolicySupport" ColumnName="IsMultiPolicySupport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClientRequestAlias">
+      <EntityTypeMapping TypeName="eCommAdapter_DevModel.ClientRequestAlia">
+        <MappingFragment StoreEntitySet="ClientRequestAlias">
+          <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ClientStatus" ColumnName="ClientStatus" />
+          <ScalarProperty Name="ClientResponseXml" ColumnName="ClientResponseXml" />
+          <ScalarProperty Name="ClientRequestXml" ColumnName="ClientRequestXml" />
+          <ScalarProperty Name="AuditId" ColumnName="AuditId" />
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="RequestDetailID" ColumnName="RequestDetailID" />
+          <ScalarProperty Name="ClientRequestAliasId" ColumnName="ClientRequestAliasId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

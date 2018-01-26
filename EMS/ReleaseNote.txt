@@ -1,0 +1,17 @@
+Implement Factory Design pattern
+DI (unity)
+SignalR
+Logging tool (Log4Net) : Installed nuget package . but logging is not working.
+Attribute base Routing 
+Logging through Attributes
+
+
+
+http://www.tutorialsteacher.com/webapi/configure-dependency-injection-with-web-api
+
+http://www.tutorialsteacher.com/webapi/web-api-filters
+
+token-based-authentication-in-web-api-2-via-owin/
+
+
+https://www.codeproject.com/Articles/814768/CRUD-Operations-Using-the-Generic-Repository-Patte

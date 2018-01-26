@@ -1,0 +1,11 @@
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\CMS.DB.dll.config
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\CMS.DB.dll
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\CMS.DB.pdb
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\EntityFramework.dll
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\EntityFramework.SqlServer.dll
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\EntityFramework.xml
+C:\NAVEEN\API\EMS\CMS.DB\bin\Debug\EntityFramework.SqlServer.xml
+C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.csprojResolveAssemblyReference.cache
+C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.csproj.CoreCompileInputs.cache
+C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.dll
+C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.pdb

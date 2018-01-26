@@ -1,0 +1,12 @@
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\ConsoleTestApp.exe.config
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\ConsoleTestApp.exe
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\ConsoleTestApp.pdb
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\CMS.DB.dll
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\EntityFramework.dll
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\CMS.DB.pdb
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\CMS.DB.dll.config
+C:\NAVEEN\API\EMS\ConsoleTestApp\bin\Debug\EntityFramework.xml
+C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.csprojResolveAssemblyReference.cache
+C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.csproj.CoreCompileInputs.cache
+C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.exe
+C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.pdb

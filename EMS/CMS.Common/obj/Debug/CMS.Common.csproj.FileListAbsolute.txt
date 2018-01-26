@@ -1,0 +1,9 @@
+C:\NAVEEN\API\EMS\CMS.Common\bin\Debug\CMS.Common.dll.config
+C:\NAVEEN\API\EMS\CMS.Common\bin\Debug\CMS.Common.dll
+C:\NAVEEN\API\EMS\CMS.Common\bin\Debug\CMS.Common.pdb
+C:\NAVEEN\API\EMS\CMS.Common\bin\Debug\log4net.correlationPatternConverter.dll
+C:\NAVEEN\API\EMS\CMS.Common\bin\Debug\log4net.dll
+C:\NAVEEN\API\EMS\CMS.Common\bin\Debug\log4net.xml
+C:\NAVEEN\API\EMS\CMS.Common\obj\Debug\CMS.Common.csproj.CoreCompileInputs.cache
+C:\NAVEEN\API\EMS\CMS.Common\obj\Debug\CMS.Common.dll
+C:\NAVEEN\API\EMS\CMS.Common\obj\Debug\CMS.Common.pdb
