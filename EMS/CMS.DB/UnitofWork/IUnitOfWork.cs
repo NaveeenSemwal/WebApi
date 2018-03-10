@@ -5,7 +5,7 @@ namespace CMS.DB
 {
     public interface IUnitOfWork
     {
-        IGenericRepository<ClientRequestAlia> ClientRequestAliasRepository { get; }
+        IGenericRepository<Category> CategoryRepository { get; }
         void Commit();
     }
 }

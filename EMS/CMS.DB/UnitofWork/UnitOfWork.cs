@@ -10,7 +10,7 @@ namespace CMS.DB
 
         private readonly eCommAdapter_DevEntities context;
         private bool disposed;
-        private IGenericRepository<ClientRequestAlia> _clientRequestAliasRepository;
+        private IGenericRepository<Category> _categoryRepository;
 
 
         public UnitOfWork(eCommAdapter_DevEntities context)
@@ -36,15 +36,15 @@ namespace CMS.DB
 
 
         #region IUnitOfWork Members
-        public IGenericRepository<ClientRequestAlia> ClientRequestAliasRepository
+        public IGenericRepository<Category> CategoryRepository
         {
             get
             {
-                if (_clientRequestAliasRepository == null)
+                if (_categoryRepository == null)
                 {
-                    _clientRequestAliasRepository = new GenericRepository<ClientRequestAlia>(context);
+                    _categoryRepository = new GenericRepository<Category>(context);
                 }
-                return _clientRequestAliasRepository;
+                return _categoryRepository;
             }
         }
         #endregion

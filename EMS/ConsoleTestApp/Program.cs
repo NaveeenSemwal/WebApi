@@ -22,10 +22,10 @@ namespace ConsoleTestApp
             try
             {
 
-                IClientRequestAliasRepository clientRequestAliasRepository = new ClientRequestAliasRepository();
-                var enumarableSourceValueObject = clientRequestAliasRepository.GetAllClientAlias();
+                ICategoryRepository clientRequestAliasRepository = new CategoryRepository();
+                var enumarableSourceValueObject = clientRequestAliasRepository.GetAllCategories();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 throw;

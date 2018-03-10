@@ -10,3 +10,15 @@ C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.csprojResolveAssemblyR
 C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.csproj.CoreCompileInputs.cache
 C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.exe
 C:\NAVEEN\API\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.pdb
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\ConsoleTestApp.exe.config
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\ConsoleTestApp.exe
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\ConsoleTestApp.pdb
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\CMS.DB.dll
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\EntityFramework.dll
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\CMS.DB.pdb
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\CMS.DB.dll.config
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\bin\Debug\EntityFramework.xml
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.csprojResolveAssemblyReference.cache
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.csproj.CoreCompileInputs.cache
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.exe
+D:\OnlinePortal\WebApi\EMS\ConsoleTestApp\obj\Debug\ConsoleTestApp.pdb

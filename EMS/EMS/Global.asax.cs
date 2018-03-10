@@ -20,7 +20,7 @@ namespace EMS
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-
+            // This is for configuring Auto Mapper class.
             AutoMapperConfig.Initialize();
 
         }

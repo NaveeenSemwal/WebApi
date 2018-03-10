@@ -1,32 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="eCommAdapter_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="Country">
-    <Key>
-      <PropertyRef Name="CountryISOCode" />
-    </Key>
-    <Property Name="CountryISOCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="IsMultiPolicySupport" Type="Boolean" />
-  </EntityType>
   <EntityContainer Name="eCommAdapter_DevEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Countries" EntityType="Self.Country" />
-    <EntitySet Name="ClientRequestAlias" EntityType="eCommAdapter_DevModel.ClientRequestAlia" />
+    <EntitySet Name="ProductCategories" EntityType="eCommAdapter_DevModel.ProductCategory" />
+    <EntitySet Name="Categories" EntityType="eCommAdapter_DevModel.Category" />
+    <EntitySet Name="Products" EntityType="eCommAdapter_DevModel.Product" />
+    <EntitySet Name="ProductDetails" EntityType="eCommAdapter_DevModel.ProductDetail" />
   </EntityContainer>
-  <EntityType Name="ClientRequestAlia">
+  <EntityType Name="ProductCategory">
     <Key>
-      <PropertyRef Name="ClientRequestAliasId" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="ClientRequestAliasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RequestDetailID" Type="Int32" Nullable="false" />
-    <Property Name="MessageId" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-    <Property Name="AuditId" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-    <Property Name="ClientRequestXml" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ClientResponseXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ClientStatus" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-    <Property Name="ClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="ProductId" Type="Guid" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Brand" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Model" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductId" Type="Guid" Nullable="false" />
+    <Property Name="ProductDetailId" Type="Guid" Nullable="false" />
+    <Property Name="PurificationType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="InstallationType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Capacity" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FilterCartridges" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
   </EntityType>
 </Schema>

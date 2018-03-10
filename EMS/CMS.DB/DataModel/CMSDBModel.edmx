@@ -5,67 +5,119 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="eCommAdapter_DevModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="ClientRequestAlias">
+        <EntityType Name="ProductCategory">
           <Key>
-            <PropertyRef Name="ClientRequestAliasId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ClientRequestAliasId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RequestDetailID" Type="int" Nullable="false" />
-          <Property Name="MessageId" Type="nvarchar" MaxLength="70" Nullable="false" />
-          <Property Name="AuditId" Type="nvarchar" MaxLength="70" Nullable="false" />
-          <Property Name="ClientRequestXml" Type="xml" Nullable="false" />
-          <Property Name="ClientResponseXml" Type="xml" />
-          <Property Name="ClientStatus" Type="bit" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
-          <Property Name="ModifiedDate" Type="datetime" />
-          <Property Name="ClientNumber" Type="nvarchar" MaxLength="10" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
         </EntityType>
-        <EntityType Name="Country">
+        <EntityType Name="Category">
           <Key>
-            <PropertyRef Name="CountryISOCode" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="CountryISOCode" Type="nvarchar" MaxLength="3" Nullable="false" />
-          <Property Name="CountryName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="CreatedDate" Type="datetime" />
-          <Property Name="ModifiedDate" Type="datetime" />
-          <Property Name="IsMultiPolicySupport" Type="bit" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="150" />
+          <Property Name="Price" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ProductDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ProductDetailId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PurificationType" Type="nvarchar" MaxLength="150" />
+          <Property Name="InstallationType" Type="nvarchar" MaxLength="150" />
+          <Property Name="Capacity" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="FilterCartridges" Type="nvarchar" MaxLength="150" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" />
         </EntityType>
         <EntityContainer Name="eCommAdapter_DevModelStoreContainer">
-          <EntitySet Name="ClientRequestAlias" EntityType="Self.ClientRequestAlias" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="link" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="master" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="master" store:Type="Tables" />
+          <EntitySet Name="ProductDetail" EntityType="Self.ProductDetail" Schema="master" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="eCommAdapter_DevModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="Country">
-          <Key>
-            <PropertyRef Name="CountryISOCode" />
-          </Key>
-          <Property Name="CountryISOCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="IsMultiPolicySupport" Type="Boolean" />
-        </EntityType>
         <EntityContainer Name="eCommAdapter_DevEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Countries" EntityType="Self.Country" />
-          <EntitySet Name="ClientRequestAlias" EntityType="eCommAdapter_DevModel.ClientRequestAlia" />
+          <EntitySet Name="ProductCategories" EntityType="eCommAdapter_DevModel.ProductCategory" />
+          <EntitySet Name="Categories" EntityType="eCommAdapter_DevModel.Category" />
+          <EntitySet Name="Products" EntityType="eCommAdapter_DevModel.Product" />
+          <EntitySet Name="ProductDetails" EntityType="eCommAdapter_DevModel.ProductDetail" />
         </EntityContainer>
-        <EntityType Name="ClientRequestAlia">
+        <EntityType Name="ProductCategory">
           <Key>
-            <PropertyRef Name="ClientRequestAliasId" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="ClientRequestAliasId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RequestDetailID" Type="Int32" Nullable="false" />
-          <Property Name="MessageId" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="AuditId" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="ClientRequestXml" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ClientResponseXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ClientStatus" Type="Boolean" Nullable="false" />
-          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
-          <Property Name="ClientNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Guid" Nullable="false" />
+          <Property Name="ProductId" Type="Guid" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ProductDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductId" Type="Guid" Nullable="false" />
+          <Property Name="ProductDetailId" Type="Guid" Nullable="false" />
+          <Property Name="PurificationType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="InstallationType" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Capacity" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FilterCartridges" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -73,30 +125,56 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="eCommAdapter_DevModelStoreContainer" CdmEntityContainer="eCommAdapter_DevEntities">
-          <EntitySetMapping Name="Countries">
-            <EntityTypeMapping TypeName="eCommAdapter_DevModel.Country">
-              <MappingFragment StoreEntitySet="Country">
-                <ScalarProperty Name="CountryISOCode" ColumnName="CountryISOCode" />
-                <ScalarProperty Name="CountryName" ColumnName="CountryName" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="IsMultiPolicySupport" ColumnName="IsMultiPolicySupport" />
+          <EntitySetMapping Name="ProductCategories">
+            <EntityTypeMapping TypeName="eCommAdapter_DevModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategory">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ClientRequestAlias">
-            <EntityTypeMapping TypeName="eCommAdapter_DevModel.ClientRequestAlia">
-              <MappingFragment StoreEntitySet="ClientRequestAlias">
-                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
-                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
-                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
-                <ScalarProperty Name="ClientStatus" ColumnName="ClientStatus" />
-                <ScalarProperty Name="ClientResponseXml" ColumnName="ClientResponseXml" />
-                <ScalarProperty Name="ClientRequestXml" ColumnName="ClientRequestXml" />
-                <ScalarProperty Name="AuditId" ColumnName="AuditId" />
-                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
-                <ScalarProperty Name="RequestDetailID" ColumnName="RequestDetailID" />
-                <ScalarProperty Name="ClientRequestAliasId" ColumnName="ClientRequestAliasId" />
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="eCommAdapter_DevModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="eCommAdapter_DevModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductDetails">
+            <EntityTypeMapping TypeName="eCommAdapter_DevModel.ProductDetail">
+              <MappingFragment StoreEntitySet="ProductDetail">
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="FilterCartridges" ColumnName="FilterCartridges" />
+                <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+                <ScalarProperty Name="InstallationType" ColumnName="InstallationType" />
+                <ScalarProperty Name="PurificationType" ColumnName="PurificationType" />
+                <ScalarProperty Name="ProductDetailId" ColumnName="ProductDetailId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

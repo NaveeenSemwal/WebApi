@@ -25,7 +25,9 @@ namespace CMS.DB.DataModel
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Country> Countries { get; set; }
-        public virtual DbSet<ClientRequestAlia> ClientRequestAlias { get; set; }
+        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<ProductDetail> ProductDetails { get; set; }
     }
 }

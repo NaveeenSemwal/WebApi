@@ -5,8 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="054fe013ab534f7e9137ebb3efc5effa" Name="Diagram1">
-        <EntityTypeShape EntityType="eCommAdapter_DevModel.Country" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="eCommAdapter_DevModel.ClientRequestAlia" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="eCommAdapter_DevModel.ProductCategory" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="eCommAdapter_DevModel.Category" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="eCommAdapter_DevModel.Product" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="eCommAdapter_DevModel.ProductDetail" Width="1.5" PointX="5.75" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

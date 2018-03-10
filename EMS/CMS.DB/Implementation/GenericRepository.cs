@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CMS.DB.GenericRepository
 {
@@ -20,7 +21,7 @@ namespace CMS.DB.GenericRepository
             this.Entities = context.Set<Entity>();
         }
 
-       
+
         private static string PopulateEFerror(DbValidationError validationError)
         {
             return string.Format("Property: {0} Error: {1}",
@@ -83,5 +84,7 @@ namespace CMS.DB.GenericRepository
         {
             throw new NotImplementedException();
         }
+
+
     }
 }

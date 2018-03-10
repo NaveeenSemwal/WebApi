@@ -49,7 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataModel\ClientRequestAlia.cs">
+    <Compile Include="DataModel\Category.cs">
       <DependentUpon>CMSDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\CMSDBModel.Context.cs">
@@ -67,14 +67,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CMSDBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Contract\IClientRequestAliasRepository.cs" />
-    <Compile Include="DataModel\Country.cs">
+    <Compile Include="Contract\ICategoryRepository.cs" />
+    <Compile Include="DataModel\Product.cs">
+      <DependentUpon>CMSDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductCategory.cs">
+      <DependentUpon>CMSDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModel\ProductDetail.cs">
       <DependentUpon>CMSDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Implementation\GenericRepository.cs" />
     <Compile Include="Contract\IGenericRepository.cs" />
     <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Implementation\ClientRequestAliasRepository.cs" />
+    <Compile Include="Implementation\CategoryRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitofWork\IUnitOfWork.cs" />
     <Compile Include="UnitofWork\UnitOfWork.cs" />

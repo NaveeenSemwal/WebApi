@@ -9,3 +9,14 @@ C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.csprojResolveAssemblyReference.cache
 C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.csproj.CoreCompileInputs.cache
 C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.dll
 C:\NAVEEN\API\EMS\CMS.DB\obj\Debug\CMS.DB.pdb
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\CMS.DB.dll.config
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\CMS.DB.dll
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\CMS.DB.pdb
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\EntityFramework.dll
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\EntityFramework.SqlServer.dll
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\EntityFramework.xml
+D:\OnlinePortal\WebApi\EMS\CMS.DB\bin\Debug\EntityFramework.SqlServer.xml
+D:\OnlinePortal\WebApi\EMS\CMS.DB\obj\Debug\CMS.DB.csproj.CoreCompileInputs.cache
+D:\OnlinePortal\WebApi\EMS\CMS.DB\obj\Debug\CMS.DB.dll
+D:\OnlinePortal\WebApi\EMS\CMS.DB\obj\Debug\CMS.DB.pdb
+D:\OnlinePortal\WebApi\EMS\CMS.DB\obj\Debug\CMS.DB.csprojResolveAssemblyReference.cache

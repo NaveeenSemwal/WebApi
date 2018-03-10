@@ -46,9 +46,9 @@
   <ItemGroup>
     <Compile Include="AutoMapper\AutoMapperConfig.cs" />
     <Compile Include="BaseEntity.cs" />
-    <Compile Include="Contract\IClientRequestManager.cs" />
-    <Compile Include="Entities\ClientRequestAlias.cs" />
-    <Compile Include="Implementation\ClientRequestManager.cs" />
+    <Compile Include="Contract\IManagerBase.cs" />
+    <Compile Include="Entities\CategoryDto.cs" />
+    <Compile Include="Implementation\CategoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

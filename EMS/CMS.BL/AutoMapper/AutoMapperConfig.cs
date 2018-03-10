@@ -10,7 +10,7 @@ namespace CMS.BL.AutoMapper
         {
             Mapper.Initialize((config) =>
             {
-                config.CreateMap<ClientRequestAlia, ClientRequestAlias>().ReverseMap();
+                config.CreateMap<Category, CategoryDto>().ReverseMap();
             });
         }
     }
